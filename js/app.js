@@ -5,6 +5,12 @@ function renderJobs(list) {
   const container = document.getElementById("jobsList");
   const info = document.getElementById("resultsInfo");
 
+  if (isLoading) {
+    info.textContent = "";
+    container.innerHTML = `<div class="loading">Fetching live jobs from RemoteOK...</div>`;
+    return;
+  }
+
   info.textContent = `${list.length} job${list.length === 1 ? "" : "s"} found`;
 
   if (list.length === 0) {
@@ -17,11 +23,15 @@ function renderJobs(list) {
     return;
   }
 
+  // ... keep the rest of your map(...) function exactly the same ...
   container.innerHTML = list
     .map(
       (job) => `
-    <a href="job.html?id=${job.id}" class="job-card" style="text-decoration:none;color:inherit;display:block;">
-      <h3>${job.title}</h3>
+        <a href="job.html?id=${job.id}" class="job-card" style="text-decoration:none;color:inherit;display:block;">
+      <div class="job-header-flex">
+        <img src="${getCompanyLogo(job.company)}" class="company-logo" alt="${job.company}" onerror="this.src='https://ui-avatars.com/api/?name=${job.company}&background=random'" />
+        <h3>${job.title}</h3>
+      </div>
       <div class="meta">${job.company} · ${job.location} · ${job.type} · ${postedText(job.postedDaysAgo)}</div>
       <div class="salary">${job.currency}${job.salaryMin.toLocaleString()} – ${job.currency}${job.salaryMax.toLocaleString()}</div>
       <div class="tags">${job.tags.map((t) => `<span class="tag">${t}</span>`).join("")}</div>

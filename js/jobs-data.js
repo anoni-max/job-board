@@ -73,3 +73,17 @@ function postedText(daysAgo) {
 
 // Start fetching immediately when the file loads
 fetchJobs();
+
+// Helper: Guess company domain and get logo
+function getCompanyLogo(companyName) {
+  if (!companyName) return "https://ui-avatars.com/api/?name=Job&background=random";
+  
+  // Clean up company name (remove spaces, "Inc", "LLC", etc. for the URL)
+  const cleanName = companyName
+    .toLowerCase()
+    .replace(/\s+inc\.?$|\s+llc\.?$/g, '')
+    .replace(/[^a-z0-9]/g, ''); 
+    
+  // Clearbit API: returns a logo based on domain
+  return `https://logo.clearbit.com/${cleanName}.com`;
+}
