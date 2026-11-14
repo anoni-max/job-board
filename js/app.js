@@ -27,7 +27,7 @@ function renderJobs(list) {
   container.innerHTML = list
     .map(
       (job) => `
-        <a href="job.html?id=${job.id}" class="job-card" style="text-decoration:none;color:inherit;display:block;">
+        <a href="/job.html?id=${job.id}" class="job-card" style="text-decoration:none;color:inherit;display:block;">
       <div class="job-header-flex">
         <img src="${getCompanyLogo(job.company)}" class="company-logo" alt="${job.company}" onerror="this.src='https://ui-avatars.com/api/?name=${job.company}&background=random'" />
         <h3>${job.title}</h3>
