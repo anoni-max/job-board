@@ -19,7 +19,7 @@ async function fetchJobs() {
       const cleanTitle = job.position.replace(/<[^>]*>?/gm, '');
       
       return {
-        id: job.id,
+        id: cleanTitle.toLowerCase().replace(/[^a-z0-9]+/g, '-'), // Creates IDs like "senior-react-engineer"
         title: cleanTitle,
         company: job.company,
         location: job.location || "Remote",
@@ -31,6 +31,7 @@ async function fetchJobs() {
         postedDaysAgo: 0, // We'll treat all fetched jobs as "Today" for now
         description: job.description || "No description provided.",
         requirements: ["See full description for details."],
+        apply_url: job.apply_url || job.url, // Get the real company URL
       };
     });
 
