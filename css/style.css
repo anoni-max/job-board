@@ -529,3 +529,60 @@ a.job-card h3 {
     padding: 20px;
   }
 }
+/* ============================================
+   EMAIL CAPTURE (JOB ALERTS)
+   ============================================ */
+.alert-section {
+  padding: 40px 0;
+}
+
+.alert-card {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 12px;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.alert-card h2 {
+  color: #1e3a8a;
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.alert-card p {
+  color: #3b82f6;
+  margin-bottom: 24px;
+  font-size: 15px;
+}
+
+.alert-form {
+  display: flex;
+  gap: 10px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.alert-form input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1px solid #93c5fd;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+}
+
+.alert-form input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+@media (max-width: 640px) {
+  .alert-form {
+    flex-direction: column;
+  }
+  
+  .alert-form button {
+    width: 100%;
+  }
+}
