@@ -51,9 +51,10 @@ function renderJobDetail() {
         ${job.tags.map((t) => `<span class="tag">${t}</span>`).join("")}
       </div>
 
-      <div class="job-detail-actions">
-        <a href="mailto:you@example.com?subject=Application for ${encodeURIComponent(job.title)}"
-           class="btn btn-primary">Apply via Email</a>
+    <div class="job-detail-actions">
+        <a href="${job.apply_url}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          Apply Now ↗
+        </a>
         <button class="btn btn-secondary" onclick="copyLink()">Copy Link</button>
       </div>
 
