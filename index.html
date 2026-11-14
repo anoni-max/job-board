@@ -6,6 +6,13 @@
   <title>JobBoard — Find Your Next Job</title>
   <meta name="description" content="Search thousands of jobs. Free to browse." />
   <link rel="stylesheet" href="css/style.css" />
+  <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-PNM9JQTP"></script>
+  <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-PNM9JQTP"></script>
+  <script>
+     window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  </script>
 </head>
 <body>
   <nav class="navbar">
@@ -23,15 +30,16 @@
     <div class="container">
       <h1>Find Your Next Job</h1>
       <p>Search thousands of opportunities — free to browse</p>
-      <div class="search-box">
-        <input id="searchInput" type="text" placeholder="Job title, company, or keyword..." />
-        <select id="locationSelect">
-          <option value="">All locations</option>
-          <option value="Remote">Remote</option>
-          <option value="Berlin">Berlin</option>
-          <option value="New York">New York</option>
-          <option value="London">London</option>
-        </select>
+        <div class="search-box">
+            <input id="searchInput" type="text" placeholder="Job title, company, or keyword..." />
+                <select id="locationSelect">
+                <option value="">All locations</option>
+                <option value="Remote">Remote</option>
+                <option value="Berlin">Berlin</option>
+                <option value="New York">New York</option>
+                <option value="London">London</option>
+                </select>
+            <input id="salaryInput" type="number" placeholder="Min salary" min="0" step="10000" />
       </div>
     </div>
   </section>
@@ -47,6 +55,7 @@
     </div>
   </footer>
 
+  <script src="js/jobs-data.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>
