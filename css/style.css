@@ -413,3 +413,44 @@ a.job-card h3 {
   color: #2563eb;
   text-decoration: underline;
 }
+/* ============================================
+   API JOB DESCRIPTION FORMATTING
+   ============================================ */
+.job-description {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #374151;
+}
+
+.job-description h1, 
+.job-description h2, 
+.job-description h3 {
+  color: #111827;
+  margin-top: 24px;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.job-description p {
+  margin-bottom: 16px;
+}
+
+.job-description ul, 
+.job-description ol {
+  margin-bottom: 16px;
+  padding-left: 24px;
+}
+
+.job-description li {
+  margin-bottom: 8px;
+}
+
+.job-description a {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+.job-description strong {
+  font-weight: 600;
+  color: #111827;
+}
