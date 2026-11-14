@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JobBoard — Find Your Next Job</title>
+  <meta name="description" content="Search thousands of jobs. Free to browse." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="logo">💼 JobBoard</a>
+      <div class="nav-links">
+        <a href="#jobs">Browse</a>
+        <a href="#about">About</a>
+        <a href="mailto:you@example.com">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Find Your Next Job</h1>
+      <p>Search thousands of opportunities — free to browse</p>
+      <div class="search-box">
+        <input id="searchInput" type="text" placeholder="Job title, company, or keyword..." />
+        <select id="locationSelect">
+          <option value="">All locations</option>
+          <option value="Remote">Remote</option>
+          <option value="Berlin">Berlin</option>
+          <option value="New York">New York</option>
+          <option value="London">London</option>
+        </select>
+      </div>
+    </div>
+  </section>
+
+  <main class="container" id="jobs">
+    <div class="results-info" id="resultsInfo"></div>
+    <div id="jobsList"></div>
+  </main>
+
+  <footer id="about">
+    <div class="container">
+      <p>© 2024 JobBoard — Built by me.</p>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
