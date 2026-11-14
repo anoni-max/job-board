@@ -387,3 +387,12 @@ a.job-card h3 {
     text-align: center;
   }
 }
+/* Fix for huge inputs on mobile */
+@media (max-width: 640px) {
+  .search-box input,
+  .search-box select {
+    height: 50px; /* Forces a normal height */
+    padding: 0 16px; /* Centers the text vertically */
+    font-size: 16px;
+  }
+}
