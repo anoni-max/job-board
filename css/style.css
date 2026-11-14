@@ -108,13 +108,10 @@ body {
   color: #111827;
 }
 
-.search-box input {
-  flex: 1 1 250px;
-  min-width: 0;
-}
-
+.search-box input,
 .search-box select {
-  flex: 0 1 auto;
+  flex: 1 1 200px;
+  min-width: 0;
   cursor: pointer;
 }
 
@@ -375,24 +372,23 @@ a.job-card h3 {
 }
 
 /* ============================================
-   RESPONSIVE — job detail + salary input
+   RESPONSIVE — tablet & phone
    ============================================ */
 @media (max-width: 640px) {
-  .job-detail-card {
-    padding: 20px;
+  .hero {
+    padding: 40px 0;
   }
 
-  .job-detail-actions .btn {
-    flex: 1;
-    text-align: center;
+  .search-box {
+    flex-direction: column;
+    align-items: stretch; /* Forces children to stretch horizontally */
   }
-}
-/* Fix for huge inputs on mobile */
-@media (max-width: 640px) {
+
   .search-box input,
   .search-box select {
-    height: 50px; /* Forces a normal height */
-    padding: 0 16px; /* Centers the text vertically */
-    font-size: 16px;
+    width: 100%;
+    flex: none; /* Stops them from stretching vertically */
+    height: 52px; /* Normal, clean height */
+    padding: 0 16px;
   }
 }
