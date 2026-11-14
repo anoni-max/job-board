@@ -31,15 +31,13 @@ function renderJobs(list) {
     .join("");
 }
 
-// ============================================
-// FILTER
-// ============================================
 function filterJobs() {
   const query = document.getElementById("searchInput").value.toLowerCase().trim();
   const location = document.getElementById("locationSelect").value;
   const minSalary = Number(document.getElementById("salaryInput").value) || 0;
+  const sortBy = document.getElementById("sortSelect").value;
 
-  const filtered = jobs.filter((job) => {
+  let filtered = jobs.filter((job) => {
     const matchesQuery =
       query === "" ||
       job.title.toLowerCase().includes(query) ||
@@ -52,6 +50,15 @@ function filterJobs() {
     return matchesQuery && matchesLocation && matchesSalary;
   });
 
+  // Sort
+  if (sortBy === "recent") {
+    filtered.sort((a, b) => a.postedDaysAgo - b.postedDaysAgo);
+  } else if (sortBy === "salary") {
+    filtered.sort((a, b) => b.salaryMax - a.salaryMax);
+  } else if (sortBy === "title") {
+    filtered.sort((a, b) => a.title.localeCompare(b.title));
+  }
+
   renderJobs(filtered);
 }
 
@@ -63,3 +70,4 @@ document.getElementById("locationSelect").addEventListener("change", filterJobs)
 document.getElementById("salaryInput").addEventListener("input", filterJobs);
 
 renderJobs(jobs);
+document.getElementById("sortSelect").addEventListener("change", filterJobs);
