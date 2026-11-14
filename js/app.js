@@ -82,6 +82,16 @@ const jobs = [
     currency: "$",
     tags: ["Writing", "Documentation", "Remote"],
   },
+    {
+    title: "UX Researcher",
+    company: "Your Company",
+    location: "Remote",
+    type: "Full-time",
+    salaryMin: 90000,
+    salaryMax: 120000,
+    currency: "$",
+    tags: ["Research", "Figma", "Remote"],
+  },
 ];
 
 // ============================================
